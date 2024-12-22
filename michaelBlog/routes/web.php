@@ -10,6 +10,10 @@ Route::get('/landing-pages', function () {
     return view('content.landing-pages');
 })->name('landing-pages');
 
+Route::get('/index', function () {
+    return view('index');
+})->name('index');
+
 Route::get('/gallery', function () {
     return view('gallery.gallery');
 })->name('gallery');

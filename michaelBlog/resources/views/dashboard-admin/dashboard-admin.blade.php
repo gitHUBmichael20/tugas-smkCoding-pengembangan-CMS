@@ -11,8 +11,7 @@
 
 <body>
 
-    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
-        type="button"
+    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button"
         class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
         <span class="sr-only">Open sidebar</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -27,9 +26,9 @@
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-            <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            <a href="{{ route('admin') }}" class="flex items-center ps-2.5 mb-5">
+                <img src="./assets/logo.png" class="h-6 me-3 sm:h-7" alt="Michael Logo" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Michael's Blog</span>
             </a>
             <ul class="space-y-2 font-medium">
                 <li>
@@ -43,7 +42,7 @@
                             <path
                                 d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
                         </svg>
-                        <span class="ms-3">Dashboard</span>
+                        <span class="ms-3">JumboTron</span>
                     </a>
                 </li>
                 <li>
@@ -55,7 +54,7 @@
                             <path
                                 d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
                         </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Kanban</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Article</span>
                         <span
                             class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
                     </a>
@@ -90,18 +89,6 @@
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            viewBox="0 0 18 20">
-                            <path
-                                d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
-                        </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Products</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
@@ -109,24 +96,218 @@
                         <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
-                            <path
-                                d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z" />
-                            <path
-                                d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z" />
-                        </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
-                    </a>
-                </li>
             </ul>
         </div>
     </aside>
+
+    <main>
+        {{-- konten jumbotron --}}
+        <div class="min-h-screen bg-gray-100 p-4">
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
+                <!-- Admin Panel Header -->
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Jumbotron Admin Panel</h2>
+                    <p class="text-gray-600">Manage your jumbotron content</p>
+                </div>
+
+                <!-- Admin Form -->
+                <form class="space-y-6">
+                    <!-- Title Input -->
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                        <input type="text" id="title" name="title"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter title">
+                    </div>
+
+                    <!-- Category Select -->
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                        <select id="category" name="category"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="tutorial">Tutorial</option>
+                            <option value="news">News</option>
+                            <option value="update">Update</option>
+                            <option value="announcement">Announcement</option>
+                        </select>
+                    </div>
+
+                    <!-- Paragraph Input -->
+                    <div>
+                        <label for="paragraph" class="block text-sm font-medium text-gray-700 mb-2">Paragraph</label>
+                        <textarea id="paragraph" name="paragraph" rows="4"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter content"></textarea>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <!-- Create Button -->
+                        <button type="submit"
+                            class="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                            Create
+                        </button>
+
+                        <!-- Update Button -->
+                        <button type="button"
+                            class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            Update
+                        </button>
+
+                        <!-- Delete Button -->
+                        <button type="button"
+                            class="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                            Delete
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {{-- CRUD UNTUK ARTIKEL BLOG SAYA --}}
+        <div class="min-h-screen bg-gray-100 p-4">
+            <!-- Articles Table Section -->
+            <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Article Management</h2>
+                    <button onclick="toggleForm()"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                        Add New Article
+                    </button>
+                </div>
+
+                <!-- Articles Table -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Image</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Title</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Author</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- Sample Article 1 -->
+                            <tr>
+                                <td class="px-6 py-4">
+                                    <img src="/api/placeholder/300/200" alt="Article 1"
+                                        class="h-16 w-24 object-cover rounded">
+                                </td>
+                                <td class="px-6 py-4">Fundamental Of JavaScript</td>
+                                <td class="px-6 py-4">Michael</td>
+                                <td class="px-6 py-4">Jan 10, 2022</td>
+                                <td class="px-6 py-4 space-x-2">
+                                    <button class="text-blue-600 hover:text-blue-800">Edit</button>
+                                    <button class="text-red-600 hover:text-red-800">Delete</button>
+                                </td>
+                            </tr>
+                            <!-- Sample Article 2 -->
+                            <tr>
+                                <td class="px-6 py-4">
+                                    <img src="/api/placeholder/300/200" alt="Article 2"
+                                        class="h-16 w-24 object-cover rounded">
+                                </td>
+                                <td class="px-6 py-4">Getting Started with React</td>
+                                <td class="px-6 py-4">Michael</td>
+                                <td class="px-6 py-4">Jan 15, 2022</td>
+                                <td class="px-6 py-4 space-x-2">
+                                    <button class="text-blue-600 hover:text-blue-800">Edit</button>
+                                    <button class="text-red-600 hover:text-red-800">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Article Form Section -->
+            <div id="articleForm" class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Add/Edit Article</h2>
+                    <p class="text-gray-600">Manage your article content</p>
+                </div>
+
+                <form class="space-y-6">
+                    <!-- Image Upload -->
+                    <div>
+                        <label for="image" class="block text-sm font-medium text-gray-700 mb-2">Article
+                            Image</label>
+                        <div class="flex items-center space-x-4">
+                            <img id="imagePreview" src="/api/placeholder/300/200" alt="Preview"
+                                class="h-32 w-48 object-cover rounded">
+                            <input type="file" id="image" name="image" accept="image/*"
+                                class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        </div>
+                    </div>
+
+                    <!-- Title Input -->
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                        <input type="text" id="title" name="title"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter article title">
+                    </div>
+
+                    <!-- Content Input -->
+                    <div>
+                        <label for="content" class="block text-sm font-medium text-gray-700 mb-2">Content</label>
+                        <textarea id="content" name="content" rows="6"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Enter article content"></textarea>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <button type="submit"
+                            class="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                            Save
+                        </button>
+                        <button type="button" onclick="toggleForm()"
+                            class="px-6 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+    </main>
+
+    <script>
+        function toggleForm() {
+            const form = document.getElementById('articleForm');
+            form.classList.toggle('hidden');
+        }
+
+        function initMobileNav() {
+            const drawerButton = document.querySelector('[data-drawer-toggle="logo-sidebar"]');
+            const drawer = document.getElementById('logo-sidebar');
+            let isOpen = false;
+            drawerButton.addEventListener('click', () => {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    drawer.classList.remove('-translate-x-full');
+                    drawer.classList.add('translate-x-0');
+                } else {
+                    drawer.classList.remove('translate-x-0');
+                    drawer.classList.add('-translate-x-full');
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                const isClickInsideDrawer = drawer.contains(event.target);
+                const isClickOnButton = drawerButton.contains(event.target);
+                if (!isClickInsideDrawer && !isClickOnButton && isOpen) {
+                    isOpen = false;
+                    drawer.classList.remove('translate-x-0');
+                    drawer.classList.add('-translate-x-full');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initMobileNav);
+    </script>
 </body>
 
 </html>

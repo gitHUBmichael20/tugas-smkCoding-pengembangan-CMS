@@ -23,13 +23,12 @@
 <body>
     <nav class="bg-white/50 backdrop-blur-md fixed w-full z-20 top-0 start-0 border-b border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="./index.html" class="flex items-center space-x-3">
+            <a href="{{ route('index') }}" class="flex items-center space-x-3">
                 <img src="./assets/logo.png" class="h-8" alt="Michael Logo">
                 <span class="self-center text-2xl font-semibold text-gray-900">Michael Blog</span>
             </a>
             <div class="flex md:order-2 space-x-3">
-                <button type="button"
-                onclick="window.location.href='{{ route('sign-up')}}'"
+                <button type="button" onclick="window.location.href='{{ route('sign-up') }}'"
                     class="text-white bg-blue-500 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-400 font-medium rounded-lg text-sm px-4 py-2 text-center">Get
                     started</button>
                 <button data-collapse-toggle="navbar-sticky" type="button"
@@ -96,10 +95,14 @@
                         On this blog I share tips and tricks, frameworks, projects, tutorials, etc.
                         Make sure you subscribe to get the latest updates
                     </p>
-                    <a href="{{ route('landing-pages') }}" class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-purple-700 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800">
-                        <span class="text-xs bg-purple-600 rounded-full text-white px-4 py-1.5 me-3">New</span> <span class="text-sm font-medium">How to quickly deploy a static website, Watch Now !!</span> 
-                        <svg class="w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    <a href="{{ route('landing-pages') }}"
+                        class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-purple-700 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800">
+                        <span class="text-xs bg-purple-600 rounded-full text-white px-4 py-1.5 me-3">New</span> <span
+                            class="text-sm font-medium">How to quickly deploy a static website, Watch Now !!</span>
+                        <svg class="w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
                         </svg>
                     </a>
                 </div>
@@ -111,7 +114,8 @@
                     </div>
 
                     <div class="relative bg-white/30 backdrop-blur-sm p-4 rounded-2xl shadow-xl">
-                        <video src="./assets/programming.webm" autoplay muted loop class="w-56 h-auto max-w-lg mx-auto rounded-lg"></video>
+                        <video src="./assets/programming.webm" autoplay muted loop
+                            class="w-56 h-auto max-w-lg mx-auto rounded-lg"></video>
                     </div>
                 </div>
             </div>
@@ -397,7 +401,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./dashboard-admin/dashboard.html"
+                            <a href="{{ route('admin') }}"
                                 class="text-gray-500 hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group">
                                 <span class="w-0 group-hover:w-2 h-0.5 bg-blue-300 transition-all duration-300"></span>
                                 Dashboard Panel
