@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Michael Blog</title>
     <link rel="shortcut icon" href="{{ asset('assets/logo.png') }}" type="image/x-icon">
-
     @vite('resources/css/app.css')
     <script>
         function toggleMenu() {
@@ -25,11 +24,12 @@
     <nav class="bg-white/50 backdrop-blur-md fixed w-full z-20 top-0 start-0 border-b border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="./index.html" class="flex items-center space-x-3">
-                <img src="./assets/logo.png" class="h-8" alt="Flowbite Logo">
-                <span class="self-center text-2xl font-semibold text-gray-900">Flowbite</span>
+                <img src="./assets/logo.png" class="h-8" alt="Michael Logo">
+                <span class="self-center text-2xl font-semibold text-gray-900">Michael Blog</span>
             </a>
             <div class="flex md:order-2 space-x-3">
                 <button type="button"
+                onclick="window.location.href='{{ route('sign-up')}}'"
                     class="text-white bg-blue-500 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-400 font-medium rounded-lg text-sm px-4 py-2 text-center">Get
                     started</button>
                 <button data-collapse-toggle="navbar-sticky" type="button"
@@ -52,11 +52,11 @@
                             aria-current="page">Home</a>
                     </li>
                     <li>
-                        <a href="./content/landing-pages.html"
+                        <a href="{{ route('landing-pages') }}"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Article</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="{{ route('gallery') }}"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Gallery</a>
                     </li>
                     <li>
@@ -67,8 +67,6 @@
             </div>
         </div>
     </nav>
-
-
 
     <!-- hero section -->
     <section
@@ -98,19 +96,12 @@
                         On this blog I share tips and tricks, frameworks, projects, tutorials, etc.
                         Make sure you subscribe to get the latest updates
                     </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4 max-w-lg relative">
-                        <div
-                            class="absolute -right-8 bottom-0 w-24 h-24 bg-indigo-200 rounded-full blur-2xl opacity-60">
-                        </div>
-
-                        <input type="email" placeholder="Enter your email here..."
-                            class="flex-1 px-4 py-3 rounded-lg border border-gray-200 bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 shadow-sm">
-                        <button
-                            class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 shadow-md">
-                            Subscribe
-                        </button>
-                    </div>
+                    <a href="{{ route('landing-pages') }}" class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-purple-700 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800">
+                        <span class="text-xs bg-purple-600 rounded-full text-white px-4 py-1.5 me-3">New</span> <span class="text-sm font-medium">How to quickly deploy a static website, Watch Now !!</span> 
+                        <svg class="w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                    </a>
                 </div>
 
                 <div class="flex-1 w-full md:w-1/2 relative">
@@ -120,8 +111,7 @@
                     </div>
 
                     <div class="relative bg-white/30 backdrop-blur-sm p-4 rounded-2xl shadow-xl">
-                        <img src="/api/placeholder/600/500" alt="Developer illustration"
-                            class="w-full h-auto max-w-lg mx-auto rounded-lg">
+                        <video src="./assets/programming.webm" autoplay muted loop class="w-56 h-auto max-w-lg mx-auto rounded-lg"></video>
                     </div>
                 </div>
             </div>
@@ -225,7 +215,7 @@
                                 <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
                                     alt="Author">
                                 <div>
-                                    <p class="font-medium text-gray-700">Dasteen</p>
+                                    <p class="font-medium text-gray-700">Michael</p>
                                     <p>Jan 10, 2022 · 3 Min Read</p>
                                 </div>
                             </div>
@@ -259,7 +249,7 @@
                                 <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
                                     alt="Author">
                                 <div>
-                                    <p class="font-medium text-gray-700">Dasteen</p>
+                                    <p class="font-medium text-gray-700">Michael</p>
                                     <p>Jan 10, 2022 · 3 Min Read</p>
                                 </div>
                             </div>
@@ -292,7 +282,7 @@
                                 <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
                                     alt="Author">
                                 <div>
-                                    <p class="font-medium text-gray-700">Dasteen</p>
+                                    <p class="font-medium text-gray-700">Michael</p>
                                     <p>Jan 10, 2022 · 3 Min Read</p>
                                 </div>
                             </div>
@@ -325,7 +315,7 @@
                                 <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
                                     alt="Author">
                                 <div>
-                                    <p class="font-medium text-gray-700">Dasteen</p>
+                                    <p class="font-medium text-gray-700">Michael</p>
                                     <p>Jan 10, 2022 · 3 Min Read</p>
                                 </div>
                             </div>
@@ -341,6 +331,7 @@
         </div>
     </section>
 
+    {{-- Footer Website --}}
     <footer class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-700">
         <div class="max-w-7xl mx-auto p-6 lg:p-12">
             <!-- Main Footer Content -->
@@ -349,7 +340,7 @@
                 <div class="space-y-6">
                     <div class="flex items-center">
                         <h2 class="text-3xl font-bold">
-                            <span class="text-purple-700">Dasteen</span>
+                            <span class="text-purple-700">Michael</span>
                             <span class="text-gray-700">.</span>
                             <span class="text-blue-300">blog</span>
                         </h2>
@@ -461,11 +452,11 @@
                     </h3>
                     <ul class="space-y-4">
                         <li>
-                            <a href="mailto:contact@dasteen.blog"
+                            <a href="mailto:contact@Michael.blog"
                                 class="text-gray-500 hover:text-blue-300 transition-colors duration-300 flex items-center gap-3 group">
                                 <i
                                     class="fas fa-envelope text-blue-300 group-hover:scale-110 transition-transform duration-300"></i>
-                                contact@dasteen.blog
+                                contact@Michael.blog
                             </a>
                         </li>
                         <li>
@@ -484,7 +475,7 @@
             <div class="mt-12 pt-8 border-t border-gray-300">
                 <div class="text-center space-y-4">
                     <p class="text-sm text-gray-500">
-                        © 2024 <span class="font-semibold text-gray-700">Dasteen.blog</span> | All Rights Reserved
+                        © 2024 <span class="font-semibold text-gray-700">Michael.blog</span> | All Rights Reserved
                     </p>
                     <p class="text-sm text-gray-500 flex items-center justify-center gap-2">
                         Crafted with <span class="text-red-500 animate-pulse">❤</span> in Jakarta, Indonesia
@@ -493,10 +484,6 @@
             </div>
         </div>
     </footer>
-
-
-
-
 </body>
 
 </html>

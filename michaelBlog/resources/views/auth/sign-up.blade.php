@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Let's Create an Account !!</title>
-  <link rel="stylesheet" href="../styles/style.css">
+  @vite('resources/css/app.css')
   <style>
     @keyframes fadeIn {
       from {
@@ -92,8 +92,8 @@
     <div class="text-center">
       <p class="text-sm text-gray-600">
         Already have an account?
-        <a href="./login.html" class="font-medium text-blue-600 hover:text-blue-500 transition duration-200">
-          Sign in now !
+        <a href="{{ route('login') }}" class="font-medium text-blue-600 hover:text-blue-500 transition duration-200">
+          Sign in now !!
         </a>
       </p>
     </div>
