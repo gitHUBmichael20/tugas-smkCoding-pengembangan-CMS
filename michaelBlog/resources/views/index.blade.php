@@ -98,7 +98,7 @@
                     <a href="{{ route('landing-pages') }}"
                         class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-purple-700 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800">
                         <span class="text-xs bg-purple-600 rounded-full text-white px-4 py-1.5 me-3">New</span> <span
-                            class="text-sm font-medium">How to quickly deploy a static website, Watch Now !!</span>
+                            class="text-sm font-medium text-white">How to quickly deploy a static website, Watch Now !!</span>
                         <svg class="w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
