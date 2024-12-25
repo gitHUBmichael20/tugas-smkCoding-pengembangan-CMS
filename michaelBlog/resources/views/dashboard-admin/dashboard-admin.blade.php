@@ -14,7 +14,7 @@
             <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                 <div class="flex items-center mb-5">
                     <img src="./assets/logo.png" alt="Logo" class="h-8 w-8 mr-3"/>
-                    <span class="text-xl font-semibold dark:text-white">Michael's Blog</span>
+                    <span class="text-xl font-semibold dark:text-white">Syntax Journal</span>
                 </div>
                 
                 <nav class="space-y-2">

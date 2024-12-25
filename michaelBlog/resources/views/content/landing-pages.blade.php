@@ -39,20 +39,25 @@
                     </svg>
                 </button>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul
-                    class="flex flex-col p-2 md:p-0 mt-2 font-medium rounded-lg bg-white/70 backdrop-blur-md shadow-md md:flex-row md:space-x-6 md:mt-0 md:bg-transparent">
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white/70 backdrop-blur-sm md:space-x-8 md:flex-row md:mt-0 md:border-0">
                     <li>
-                        <a href="#"
-                            class="block py-2 px-4 text-blue-700 font-semibold rounded-lg hover:bg-blue-100 transition-all md:hover:bg-transparent md:hover:text-blue-800 md:border-b-2 md:border-transparent md:hover:border-blue-700">Home</a>
+                        <a href="{{ route("index") }}"
+                            class="block py-2 px-3 text-gray-900 bg-gray-200 rounded hover:bg-gray-300 md:bg-transparent md:hover:text-gray-700 md:p-0"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('landing-pages') }}"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Article</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('gallery') }}"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Gallery</a>
                     </li>
                     <li>
                         <a href="#"
-                            class="block py-2 px-4 text-gray-700 font-medium rounded-lg hover:bg-gray-100 transition-all md:hover:bg-transparent md:hover:text-blue-800 md:border-b-2 md:border-transparent md:hover:border-blue-700">About</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 px-4 text-gray-700 font-medium rounded-lg hover:bg-gray-100 transition-all md:hover:bg-transparent md:hover:text-blue-800 md:border-b-2 md:border-transparent md:hover:border-blue-700">Services</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Portofolio</a>
                     </li>
                 </ul>
             </div>
@@ -89,8 +94,6 @@
             </div>
         </div>
     </section>
-
-
 
     {{-- Menampilkan artikel website --}}
 
@@ -167,7 +170,7 @@
         <div class="container mx-auto max-w-7xl px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 @foreach ($articles as $article)
-                    <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-auto">
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                             <div class="relative">
                                 <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
@@ -204,6 +207,8 @@
     </section>
 
     {{-- Pagination sebanyak 15 artikel --}}
+
+    
 
     <script>
         const menuBtn = document.querySelector('button[type="button"]');

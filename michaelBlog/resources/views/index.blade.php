@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michael Blog</title>
+    <title>Syntax Journal</title>
     <link rel="shortcut icon" href="{{ asset('assets/logo.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <script>
@@ -25,7 +25,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="{{ route('index') }}" class="flex items-center space-x-3">
                 <img src="./assets/logo.png" class="h-8" alt="Michael Logo">
-                <span class="self-center text-2xl font-semibold text-gray-900">Michael Blog</span>
+                <span class="self-center text-2xl font-semibold text-gray-900">Syntax Journal</span>
             </a>
             <div class="flex md:order-2 space-x-3">
                 <button type="button" onclick="window.location.href='{{ route('sign-up') }}'"
@@ -82,8 +82,8 @@
                         <div class="absolute -left-6 -top-6 w-20 h-20 bg-purple-200 rounded-full blur-2xl opacity-60">
                         </div>
 
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 relative">
-                            Hi, I'm Michael
+                        <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6 relative">
+                            Hi, Welcome to Our Journal
                             <span
                                 class="block mt-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
                                 Front End Dev
@@ -344,9 +344,9 @@
                 <div class="space-y-6">
                     <div class="flex items-center">
                         <h2 class="text-3xl font-bold">
-                            <span class="text-purple-700">Michael</span>
+                            <span class="text-purple-700">Syntax</span>
                             <span class="text-gray-700">.</span>
-                            <span class="text-blue-300">blog</span>
+                            <span class="text-blue-300">Journal</span>
                         </h2>
                     </div>
                     <p class="text-gray-500 text-sm leading-relaxed">
@@ -479,7 +479,7 @@
             <div class="mt-12 pt-8 border-t border-gray-300">
                 <div class="text-center space-y-4">
                     <p class="text-sm text-gray-500">
-                        © 2024 <span class="font-semibold text-gray-700">Michael.blog</span> | All Rights Reserved
+                        © 2024 <span class="font-semibold text-gray-700">Syntax Journal</span> | All Rights Reserved
                     </p>
                     <p class="text-sm text-gray-500 flex items-center justify-center gap-2">
                         Crafted with <span class="text-red-500 animate-pulse">❤</span> in Jakarta, Indonesia
