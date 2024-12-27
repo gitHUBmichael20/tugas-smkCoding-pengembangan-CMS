@@ -401,7 +401,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin') }}"
+                            <a href="{{ route('admin-login') }}"
                                 class="text-gray-500 hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group">
                                 <span class="w-0 group-hover:w-2 h-0.5 bg-blue-300 transition-all duration-300"></span>
                                 Dashboard Panel

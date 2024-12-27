@@ -175,8 +175,7 @@
                             <div class="relative">
                                 <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
                                     src="{{ $article->image }}" alt="Article Image">
-                                <div
-                                    class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                                <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
                                     {{ $article->article_type }}
                                 </div>
                             </div>
@@ -202,9 +201,9 @@
                     </div>
                 @endforeach
             </div>
-            {{ $articles->links() }}
         </div>
     </section>
+    
 
     {{-- Pagination sebanyak 15 artikel --}}
     <script>

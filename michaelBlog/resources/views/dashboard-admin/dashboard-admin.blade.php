@@ -39,8 +39,8 @@
                     </button>
 
                     <button data-section="section-5" class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
-                        <i class="fa-solid fa-arrow-right-to-bracket" style="color: #B197FC;"></i>
-                        <span class="ml-3">Sign In</span>
+                        <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #ff1f1f;"></i>
+                        <span class="ml-3">Sign Out</span>
                     </button>
                 </nav>
             </div>

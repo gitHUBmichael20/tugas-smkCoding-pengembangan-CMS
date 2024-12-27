@@ -3,12 +3,19 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\GalleryImage;
+use App\Models\Article;
 
 // Landing Page
 Route::get('/landing-pages', [ArticleController::class, 'index'])->name('landing-pages');
 
 // Ambil Data gallery
 Route::get('/gallery-images', [GalleryImage::class, 'index'])->name('gallery-images');
+
+// Ambil Data Artikel
+Route::get('/articles', function () {
+   $articles = Article::all(); // Ambil semua artikel
+   return view('articles', compact('articles'));
+});
 
 // Kembali ke index
 Route::get('/index', function () {
@@ -39,6 +46,11 @@ Route::get('/sign-up', function () {
 Route::get('/login', function () {
    return view('auth.login');
 })->name('login');
+
+// Login untuk admin
+Route::get('/admin-login', function () {
+   return view('dashboard-admin.admin-login');
+})->name('admin-login');
 
 // prototype article
 Route::get('/article-prototype', function () {

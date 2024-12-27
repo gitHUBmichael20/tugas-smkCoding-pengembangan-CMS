@@ -11,10 +11,7 @@ class ArticleController extends Controller
         // Retrieve all articles from the database
         $articles = Article::all();
 
-        // Return response in JSON format
-        return response()->json([
-            'success' => true,
-            'data' => $articles
-        ]);
+        // Pass the articles to the view
+        return view('content.landing-pages', compact('articles'));
     }
 }
