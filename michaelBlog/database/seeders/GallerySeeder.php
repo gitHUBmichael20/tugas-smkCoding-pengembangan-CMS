@@ -20,7 +20,7 @@ class GallerySeeder extends Seeder
             DB::table('gallery')->insert([
                 'title' => $faker->sentence(3),
                 'image' => $faker->imageUrl(640, 480, 'people', true),
-                'author' => $faker->randomElement(['Budiana',  'Sandika', 'Galih', 'Michael']),
+                'author' => $faker->randomElement(['BudiWrites',  'SandiScripts', 'SandiScripts', 'MichaelInks']),
                 'captions' => $faker->sentence(8),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -28,3 +28,5 @@ class GallerySeeder extends Seeder
         }
     }
 }
+
+

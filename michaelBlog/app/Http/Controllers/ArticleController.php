@@ -8,7 +8,13 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::latest()->paginate(8);
-        return view('content.landing-pages', compact('articles'));
+        // Retrieve all articles from the database
+        $articles = Article::all();
+
+        // Return response in JSON format
+        return response()->json([
+            'success' => true,
+            'data' => $articles
+        ]);
     }
 }

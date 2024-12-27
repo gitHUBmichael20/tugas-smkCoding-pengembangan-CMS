@@ -387,7 +387,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="{{ route('article-prototype')}}"
                                 class="text-gray-500 hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group">
                                 <span class="w-0 group-hover:w-2 h-0.5 bg-blue-300 transition-all duration-300"></span>
                                 Blog
@@ -460,7 +460,7 @@
                                 class="text-gray-500 hover:text-blue-300 transition-colors duration-300 flex items-center gap-3 group">
                                 <i
                                     class="fas fa-envelope text-blue-300 group-hover:scale-110 transition-transform duration-300"></i>
-                                contact@Michael.blog
+                                carlosimbolon23@gmail.com
                             </a>
                         </li>
                         <li>
@@ -468,7 +468,7 @@
                                 class="text-gray-500 hover:text-blue-300 transition-colors duration-300 flex items-center gap-3 group">
                                 <i
                                     class="fas fa-phone text-blue-300 group-hover:scale-110 transition-transform duration-300"></i>
-                                +62 8XX XXXX XXXX
+                                +62 85947961197
                             </a>
                         </li>
                     </ul>

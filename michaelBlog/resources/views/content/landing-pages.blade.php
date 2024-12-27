@@ -207,9 +207,6 @@
     </section>
 
     {{-- Pagination sebanyak 15 artikel --}}
-
-    
-
     <script>
         const menuBtn = document.querySelector('button[type="button"]');
         const mobileMenu = document.querySelector('#navbar-search');

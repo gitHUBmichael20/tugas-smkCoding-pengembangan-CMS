@@ -39,3 +39,8 @@ Route::get('/sign-up', function () {
 Route::get('/login', function () {
    return view('auth.login');
 })->name('login');
+
+// prototype article
+Route::get('/article-prototype', function () {
+   return view('content.articles-page');
+})->name('article-prototype');

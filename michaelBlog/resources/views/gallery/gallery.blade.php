@@ -50,7 +50,7 @@
             </div>
             @endforeach
         </div>
-        {{ $gallery->links() }}
+        {{ $galleries->links() }}
     </section>
     
 </body>
