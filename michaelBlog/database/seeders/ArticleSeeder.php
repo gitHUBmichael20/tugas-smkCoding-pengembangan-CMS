@@ -22,7 +22,7 @@ class ArticleSeeder extends Seeder
                 'image' => 'https://picsum.photos/1280/960?random=' . $i,
                 'author' => $faker->randomElement(['Budiana',  'Sandika', 'Galih', 'Michael']),
                 'created_date' => $faker->date(),
-                'article_type' => $faker->randomElement(['CSS', 'Javascript', 'HTML', 'PHP', 'Github']),
+                'article_type' => $faker->randomElement(['CSS', 'Javascript', 'HTML', 'PHP', 'Github', 'Python', 'Math']),
                 'title' => $faker->sentence(6),
                 'content' => $faker->paragraphs(3, true),
                 'created_at' => Carbon::now(),

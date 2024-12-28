@@ -11,29 +11,23 @@
 
 <body class="bg-gray-100">
 
+    {{-- Navigation Bar --}}
     <nav class="bg-white/80 border-gray-200 backdrop-blur-md shadow-lg rounded-lg">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center">
                 <img src="./assets/logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-800">Michael Blog</span>
             </a>
-            <div class="flex md:order-2">
-                <div class="relative hidden md:block">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-blackx" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
-                    </div>
-                    <input type="text" id="search-navbar"
-                        class="block w-full p-2 pl-10 text-sm text-gray-900 border rounded-lg bg-white/70 shadow-md backdrop-blur-sm focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Search...">
-                </div>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button type="button"
-                    class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-white/90 shadow-md backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <span class="sr-only">Menu</span>
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get
+                    started</button>
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M1 1h15M1 7h15M1 13h15" />
                     </svg>
@@ -43,7 +37,7 @@
                 <ul
                     class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white/70 backdrop-blur-sm md:space-x-8 md:flex-row md:mt-0 md:border-0">
                     <li>
-                        <a href="{{ route("index") }}"
+                        <a href="{{ route('index') }}"
                             class="block py-2 px-3 text-gray-900 bg-gray-200 rounded hover:bg-gray-300 md:bg-transparent md:hover:text-gray-700 md:p-0"
                             aria-current="page">Home</a>
                     </li>
@@ -61,9 +55,9 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </nav>
+
 
     <section class="bg-gradient-to-br from-gray-100 via-white to-gray-200">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
@@ -85,8 +79,8 @@
                 <a href="#"
                     class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200">
                     Read more
-                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="none" viewBox="0 0 14 10">
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
@@ -98,10 +92,16 @@
     {{-- Menampilkan artikel website --}}
 
     {{-- Selector jenis artikel --}}
-    <div class="flex bg-white justify-center items-center">
+    <section class="flex flex-col pt-4 bg-white justify-center items-center">
+        <h2 class="text-3xl font-bold text-gray-900">Search Now</h2>
         <div class="bg-white p-6 space-y-6 max-w-7xl">
-            <!-- Sort dropdown and view options -->
+            <!-- Search bar and sort dropdown -->
             <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-4 flex-grow">
+                    <input type="text" placeholder="Search..."
+                        class="bg-white border border-gray-300 text-gray-700 rounded-lg px-4 py-2 w-full focus:ring-blue-500 focus:border-blue-500"
+                        aria-label="Search">
+                </div>
                 <div class="flex items-center space-x-4">
                     <label for="sort" class="text-gray-700 font-medium">Sort by:</label>
                     <select id="sort"
@@ -113,58 +113,9 @@
                     </select>
                 </div>
             </div>
-            <!-- Filter buttons -->
-            <div class="flex flex-wrap items-center gap-2">
-                <button type="button"
-                    class="text-blue-600 hover:text-white border border-blue-400 bg-blue-100 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    All categories
-                </button>
-                <!-- Development -->
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    HTML
-                </button>
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    CSS
-                </button>
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    JavaScript
-                </button>
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    PHP
-                </button>
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    Python
-                </button>
-                <!-- Tools -->
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    GitHub
-                </button>
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    VS Code
-                </button>
-                <!-- Frameworks -->
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    React
-                </button>
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    Vue
-                </button>
-                <button type="button"
-                    class="text-gray-700 border border-gray-300 hover:border-gray-400 bg-gray-100 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-full text-sm font-medium px-5 py-2.5 transition-colors duration-200">
-                    Angular
-                </button>
-            </div>
         </div>
-    </div>
+    </section>
+
 
     <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-12">
         <div class="container mx-auto max-w-7xl px-4">
@@ -175,7 +126,18 @@
                             <div class="relative">
                                 <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
                                     src="{{ $article->image }}" alt="Article Image">
-                                <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                                <div
+                                    class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm
+                                    @switch($article->article_type)
+                                        @case('CSS') bg-green-500 @break
+                                        @case('Javascript') bg-yellow-500 @break
+                                        @case('HTML') bg-red-500 @break
+                                        @case('PHP') bg-purple-500 @break
+                                        @case('Github') bg-gray-700 @break
+                                        @case('Python') bg-blue-600 @break
+                                        @case('Math') bg-teal-500 @break
+                                        @default bg-gray-400
+                                    @endswitch">
                                     {{ $article->article_type }}
                                 </div>
                             </div>
@@ -203,27 +165,7 @@
             </div>
         </div>
     </section>
-    
 
-    {{-- Pagination sebanyak 15 artikel --}}
-    <script>
-        const menuBtn = document.querySelector('button[type="button"]');
-        const mobileMenu = document.querySelector('#navbar-search');
-
-        function toggleMenuVisibility() {
-            if (window.innerWidth < 768) {
-                menuBtn.classList.remove('hidden');
-            } else {
-                menuBtn.classList.add('hidden');
-                mobileMenu.classList.remove('hidden');
-            }
-        }
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        toggleMenuVisibility();
-        window.addEventListener('resize', toggleMenuVisibility);
-    </script>
 </body>
 
 </html>
