@@ -12,7 +12,7 @@
 <body class="bg-gray-100">
 
     {{-- Navigation Bar --}}
-    <nav class="bg-white/80 border-gray-200 backdrop-blur-md shadow-lg rounded-lg">
+    <nav class="bg-white/80 border-gray-200 backdrop-blur-md shadow-lg rounded-lg sticky top-0 z-50">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center">
                 <img src="./assets/logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
@@ -20,8 +20,8 @@
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <button type="button"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get
-                    started</button>
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Log
+                    Out</button>
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -33,7 +33,8 @@
                     </svg>
                 </button>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <div id="external" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                id="navbar-sticky">
                 <ul
                     class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white/70 backdrop-blur-sm md:space-x-8 md:flex-row md:mt-0 md:border-0">
                     <li>
@@ -79,8 +80,8 @@
                 <a href="#"
                     class="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200">
                     Read more
-                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
@@ -163,9 +164,25 @@
                     </div>
                 @endforeach
             </div>
+    
+            <!-- Tambahkan Pagination -->
+            <div class="mt-8">
+                {{ $articles->links('pagination::tailwind') }}
+            </div>
         </div>
     </section>
+    
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleButton = document.querySelector("[data-collapse-toggle]");
+            const navMenu = document.getElementById("external");
+
+            toggleButton.addEventListener("click", () => {
+                navMenu.classList.toggle("hidden");
+            });
+        });
+    </script>
 </body>
 
 </html>

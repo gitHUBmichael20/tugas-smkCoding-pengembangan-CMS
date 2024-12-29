@@ -8,10 +8,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        // Retrieve all articles from the database
-        $articles = Article::all();
-
-        // Pass the articles to the view
+        $articles = Article::paginate(8);
         return view('content.landing-pages', compact('articles'));
     }
 }
