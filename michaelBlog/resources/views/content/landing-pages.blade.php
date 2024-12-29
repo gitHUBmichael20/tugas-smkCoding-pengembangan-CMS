@@ -165,7 +165,7 @@
                 @endforeach
             </div>
     
-            <!-- Tambahkan Pagination -->
+            <!-- Pagination -->
             <div class="mt-8">
                 {{ $articles->links('pagination::tailwind') }}
             </div>

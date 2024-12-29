@@ -16,11 +16,11 @@ class GallerySeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 200; $i++) {
             DB::table('gallery')->insert([
                 'title' => $faker->sentence(3),
-                'image' => $faker->imageUrl(640, 480, 'people', true),
-                'author' => $faker->randomElement(['BudiWrites',  'SandiScripts', 'SandiScripts', 'MichaelInks']),
+                'image' => 'https://picsum.photos/1280/960?random=' . $i,
+                'author' => $faker->randomElement(['BudiWrites',  'SandiScripts', 'GalihCodes', 'MichaelInks']),
                 'captions' => $faker->sentence(8),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

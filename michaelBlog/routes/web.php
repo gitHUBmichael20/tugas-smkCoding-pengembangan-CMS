@@ -4,17 +4,24 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\GalleryImage;
 use App\Models\Article;
+use App\Models\Gallery;
 
-// Landing Page
+// Buka Halaman Landing Page
 Route::get('/landing-pages', [ArticleController::class, 'index'])->name('landing-pages');
 
-// Ambil Data gallery
-Route::get('/gallery-images', [GalleryImage::class, 'index'])->name('gallery-images');
+// buka halaman gallery
+Route::get('/gallery', [GalleryImage::class, 'index'])->name('gallery');
 
 // Ambil Data Artikel
 Route::get('/articles', function () {
    $articles = Article::all(); // Ambil semua artikel
    return view('articles', compact('articles'));
+});
+
+// Ambil data Gallery
+Route::get('/galleries', function () {
+   $galleries = Gallery::all(); // Ambil semua artikel
+   return view('galleries', compact('galleries'));
 });
 
 // Kembali ke index
@@ -28,9 +35,7 @@ Route::get('/', function () {
 })->name('index');
 
 // Ke halaman gallery
-Route::get('/gallery', function () {
-   return view('gallery.gallery');
-})->name('gallery');
+Route::get('/gallery', [GalleryImage::class, 'index'])->name('gallery');
 
 // Ke halaman dashboard admin
 Route::get('/admin', function () {
