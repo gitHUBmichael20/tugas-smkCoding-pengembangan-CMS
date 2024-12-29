@@ -59,6 +59,11 @@ Route::get('/admin-login', function () {
    return view('dashboard-admin.admin-login');
 })->name('admin-login');
 
+// signup untuk admin
+Route::get('/sign-up-admin', function () {
+   return view('dashboard-admin.sign-up-admin');
+})->name('admin-sign-up');
+
 // About Pages
 Route::get('/about-pages', function () {
    return view('about');
