@@ -36,7 +36,10 @@ class PembacaController extends Controller
                 'username' => $request->username,
                 'password' => Hash::make($request->password)
             ]);
-
+        
+            // Log in the user
+            Auth::login($pembaca);
+        
             return redirect()->route("landing-pages");
         } catch (\Exception $e) {
             return response()->json([
@@ -45,6 +48,7 @@ class PembacaController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
+        
     }
 
     public function login(Request $request)

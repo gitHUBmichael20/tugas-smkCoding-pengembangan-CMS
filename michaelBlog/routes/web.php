@@ -8,6 +8,8 @@ use App\Models\Gallery;
 
 // Buka Halaman Landing Page
 Route::get('/landing-pages', [ArticleController::class, 'index'])->name('landing-pages');
+// Route::get('/landing-pages', [ArticleController::class, 'index'])->middleware('auth');
+
 
 // buka halaman gallery
 Route::get('/gallery', [GalleryImage::class, 'index'])->name('gallery');
