@@ -57,6 +57,11 @@ Route::get('/admin-login', function () {
    return view('dashboard-admin.admin-login');
 })->name('admin-login');
 
+// About Pages
+Route::get('/about-pages', function () {
+   return view('about');
+})->name('about-pages');
+
 // prototype article
 Route::get('/article-prototype', function () {
    return view('content.articles-page');

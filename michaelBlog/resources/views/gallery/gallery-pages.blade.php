@@ -52,8 +52,8 @@
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Gallery</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Portofolio</a>
+                        <a href="{{ route("about-pages")}}"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">About</a>
                     </li>
                 </ul>
             </div>
@@ -79,6 +79,9 @@
     </section>
 
     {{-- Gallery Section --}}
+    <div class="max-w-7xl mx-auto px-4 mt-4">
+        {{ $galleries->links() }}
+    </div>
     <section class="flex flex-col justify-center items-center mt-6">
         <div class="grid max-w-7xl grid-cols-2 md:grid-cols-4 gap-4">
             @foreach ($galleries as $gallery)
@@ -97,10 +100,10 @@
                 </div>
             @endforeach
         </div>
-        <div class="mt-4 max-w-full">
-            {{ $galleries->links() }}
-        </div>
-    </section>    
+    </section>
+    <div class="max-w-7xl mx-auto px-4 mt-4">
+        {{ $galleries->links() }}
+    </div>
 </body>
 
 </html>
