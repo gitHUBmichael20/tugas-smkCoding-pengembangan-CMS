@@ -41,7 +41,7 @@
         </div>
 
         <!-- Login Form -->
-        <form class="space-y-6" id="signup-form" action="{{ route('login.store') }}" method="POST">
+        <form class="space-y-6" id="signup-form" action="{{ route('sign-up.store') }}" method="POST">
             @csrf
             <div class="space-y-4">
                 <div>
@@ -88,6 +88,11 @@
                 class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-200">
                 Sign Up
             </button>
+            @if (session('error'))
+                <div class="text-red-500 text-sm mb-4">
+                    {{ session('error') }}
+                </div>
+            @endif
         </form>
 
         <!-- Footer -->
@@ -102,8 +107,7 @@
         </div>
     </div>
 
-    <script>
-    </script>
+    <script></script>
 </body>
 
 </html>
