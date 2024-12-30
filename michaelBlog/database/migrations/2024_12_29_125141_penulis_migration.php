@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
         Schema::create('penulis', function (Blueprint $table) {
             $table->id();
             $table->string('email');
             $table->string('username');
             $table->string('password');
-            $table->timestamp('created_at')->useCurrrentTimestamp();
+            $table->timestamps(); // Tambahkan ini
         });
     }
 

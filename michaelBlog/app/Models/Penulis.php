@@ -4,11 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Penulis extends Model
+class Penulis extends Authenticatable
 {
-    //
-    use hasFactory;
+    use HasFactory, Notifiable;
+    
     protected $table = 'penulis';
-    protected $fillable = ['nama', 'email', 'password'];
+    protected $primaryKey = 'id';
+    protected $hidden = ['password'];
+    
+    protected $fillable = [
+        'username',
+        'email', 
+        'password'
+    ];
 }

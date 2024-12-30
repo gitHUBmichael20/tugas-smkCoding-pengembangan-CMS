@@ -42,7 +42,7 @@ Route::get('/gallery', [GalleryImage::class, 'index'])->name('gallery');
 // Ke halaman dashboard admin
 Route::get('/admin', function () {
    return view('dashboard-admin.dashboard-admin');
-})->name('admin');
+})->name('admin')->middleware('auth:penulis');
 
 // Sign-up users
 Route::get('/sign-up', function () {

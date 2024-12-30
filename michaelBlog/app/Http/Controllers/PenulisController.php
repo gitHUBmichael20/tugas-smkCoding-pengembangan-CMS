@@ -13,50 +13,47 @@ class PenulisController extends Controller
     //
     protected $id, $email, $password, $username;
     public function store(Request $request)
-    {
-        // Validate the incoming request data
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:penulis',
-            'password' => 'required|min:8',
-            'username' => 'required|unique:penulis',
-        ]);
+{
+    // Validate the incoming request data
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|email|unique:penulis',
+        'password' => 'required|min:8',
+        'username' => 'required|unique:penulis',
+    ]);
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
+    if ($validator->fails()) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Validation failed',
+            'errors' => $validator->errors()
+        ], 422);
+    }
 
+    try {
         // Create a new penulis instance
-        $penulis = new Penulis();
-        $penulis->email = $request->email;
-        $penulis->password = Hash::make($request->password);
-        $penulis->username = $request->username;
-
-        // Save the penulis to the database
-        $penulis->save();
-
-        // return response()->json(['message' => 'Penulis created successfully'], 201);
-        return redirect()->route('admin');
-    }
-
-    public function login(Request $request)
-    {
-        // Validate the incoming request data
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required',
+        $penulis = Penulis::create([
+            'email' => $request->email,
+            'username' => $request->username,
+            'password' => Hash::make($request->password)
         ]);
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+        // Login menggunakan kredensial yang plain (belum di-hash)
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password // Password asli, bukan yang sudah di-hash
+        ])) {
+            return redirect()->route('admin');
         }
 
-        // Attempt to authenticate the user
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Authenticated successfully!
-            return redirect()->route('admin');
-        } else {
-            // Authentication failed...
-            return response()->json(['message' => 'Email atau password salah'], 401);
-        }
+        // Jika login gagal tapi user sudah terbuat
+        return redirect()->route('admin')->with('success', 'Registration successful!');
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Registration failed',
+            'error' => $e->getMessage()
+        ], 500);
     }
+}
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,50 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
+
 <body class="bg-gray-100">
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:translate-x-0">
+        <aside id="sidebar"
+            class="fixed inset-y-0 left-0 z-50 w-64 transform -translate-x-full transition-transform duration-300 ease-in-out md:relative md:translate-x-0">
             <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                 <div class="flex items-center mb-5">
-                    <img src="./assets/logo.png" alt="Logo" class="h-8 w-8 mr-3"/>
+                    <img src="./assets/logo.png" alt="Logo" class="h-8 w-8 mr-3" />
                     <span class="text-xl font-semibold dark:text-white">Syntax Journal</span>
                 </div>
-                
+
                 <nav class="space-y-2">
-                    <button data-section="section-1" class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
+                    <button data-section="section-1"
+                        class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
                         <i class="fa-solid fa-file" style="color: #B197FC;"></i>
                         <span class="ml-3">JumboTron</span>
                     </button>
 
-                    <button data-section="section-2" class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
+                    <button data-section="section-2"
+                        class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
                         <i class="fa-solid fa-newspaper" style="color: #B197FC;"></i>
                         <span class="ml-3">Article</span>
                     </button>
 
-                    <button data-section="section-3" class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
+                    <button data-section="section-3"
+                        class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
                         <i class="fa-solid fa-comment" style="color: #B197FC;"></i>
                         <span class="ml-3">Inbox</span>
                     </button>
 
-                    <button data-section="section-4" class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
+                    <button data-section="section-4"
+                        class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
                         <i class="fa-solid fa-user" style="color: #B197FC;"></i>
                         <span class="ml-3">Users</span>
                     </button>
 
-                    <button data-section="section-5" class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
+                    <button data-section="section-5"
+                        class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
                         <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #ff1f1f;"></i>
                         <span class="ml-3">Sign Out</span>
                     </button>
@@ -49,7 +62,7 @@
         <!-- Mobile menu button -->
         <button id="mobile-menu-button" class="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-gray-200">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
         </button>
 
@@ -157,8 +170,8 @@
 
             // Close sidebar when clicking outside on mobile
             document.addEventListener('click', (event) => {
-                if (isSidebarOpen && 
-                    !sidebar.contains(event.target) && 
+                if (isSidebarOpen &&
+                    !sidebar.contains(event.target) &&
                     !mobileMenuButton.contains(event.target)) {
                     isSidebarOpen = false;
                     sidebar.classList.add('-translate-x-full');
@@ -196,7 +209,7 @@
                 item.addEventListener('click', () => {
                     const sectionId = item.dataset.section;
                     showSection(sectionId);
-                    
+
                     // Close sidebar on mobile after selection
                     if (window.innerWidth < 768) {
                         isSidebarOpen = false;
@@ -210,4 +223,5 @@
         });
     </script>
 </body>
+
 </html>
