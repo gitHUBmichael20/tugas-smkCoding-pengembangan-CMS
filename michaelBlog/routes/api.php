@@ -17,5 +17,5 @@ Route::prefix('auth-user')->group(function() {
 
 Route::prefix('auth-penulis')->group(function() {
     Route::post('sign-up', [PenulisController::class, 'store'])->name('sign-up-admin.store');
-    // Route::post('login', [PenulisController::class, 'login'])->name('login.admin');
+    Route::post('login', [PenulisController::class, 'login'])->name('login.admin');
 });

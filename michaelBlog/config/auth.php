@@ -36,16 +36,16 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'pembaca' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'pembaca',
         ],
-
         'penulis' => [
             'driver' => 'session',
             'provider' => 'penulis',
-        ]
+        ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'pembaca' => [
             'driver' => 'eloquent',
             'model' => App\Models\Pembaca::class,
         ],
