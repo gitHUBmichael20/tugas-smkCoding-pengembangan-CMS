@@ -42,11 +42,7 @@
                         <a href="{{ route('index') }}"
                             class="block py-2 px-3 text-gray-900 bg-gray-200 rounded hover:bg-gray-300 md:bg-transparent md:hover:text-gray-700 md:p-0"
                             aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('landing-pages') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Article</a>
-                    </li>
+                    </li> 
                     <li>
                         <a href="{{ route('gallery') }}"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Gallery</a>
@@ -75,7 +71,6 @@
             <i class="fa-solid fa-arrow-down mr-2"></i>
             Let's See !!
         </button>
-
     </section>
 
     {{-- Gallery Section --}}
@@ -83,17 +78,20 @@
         {{ $galleries->links() }}
     </div>
     <section class="flex flex-col justify-center items-center mt-6">
-        <div class="grid max-w-7xl grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 max-w-7xl mx-auto px-4">
             @foreach ($galleries as $gallery)
-                <div class="grid gap-4">
-                    <div class="relative max-w-sm group overflow-hidden rounded-lg">
-                        <img class="w-full h-full transition-transform duration-300 group-hover:scale-105"
-                            src="{{ $gallery->image }}" alt="{{ $gallery->title }}" />
-                        <div
-                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div class="break-inside-avoid mb-4">
+                    <div class="relative group overflow-hidden rounded-lg">
+                        <img 
+                            class="w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            src="{{ $gallery->image }}" 
+                            alt="{{ $gallery->title }}"
+                            loading="lazy"
+                        />
+                        <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                             <div class="text-white text-center p-4">
-                                <h3 class="text-xl font-bold mb-2">{{ $gallery->title }}</h3>
-                                <p class="text-sm">{{ $gallery->captions }}</p>
+                                <h3 class="text-xl font-bold mb-2 line-clamp-2">{{ $gallery->title }}</h3>
+                                <p class="text-sm line-clamp-3">{{ $gallery->captions }}</p>
                             </div>
                         </div>
                     </div>
