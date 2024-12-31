@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\PembacaController;
 use App\Http\Controllers\PenulisController;
-use App\Models\Penulis;
+// use App\Models\Penulis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

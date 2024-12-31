@@ -130,6 +130,9 @@
                 <div class="bg-white p-6 rounded-lg shadow">
                     @include('dashboard-admin.upload-article')
                 </div>
+                <div class="bg-white p-6 rounded-lg shadow mt-3">
+                    @include('dashboard-admin.manage-article')
+                </div>
             </div>
 
             <div id="section-3" class="section-content hidden">

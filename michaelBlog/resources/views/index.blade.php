@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Syntax Journal</title>
+    <title>Shutter Stories</title>
     <link rel="shortcut icon" href="{{ asset('assets/logo.png') }}" type="image/x-icon">
     @vite('resources/css/app.css')
     <script>
@@ -25,10 +25,10 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="{{ route('index') }}" class="flex items-center space-x-3">
                 <img src="./assets/logo.png" class="h-8" alt="Michael Logo">
-                <span class="self-center text-2xl font-semibold text-gray-900">Syntax Journal</span>
+                <span class="self-center text-2xl font-semibold text-gray-900">Shutter Stories</span>
             </a>
             <div class="flex md:order-2 space-x-3">
-                <button type="button" onclick="window.location.href='{{ route('sign-up') }}'"
+                <button type="button" onclick="window.location.href='{{ route('admin') }}'"
                     class="text-white bg-blue-500 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-400 font-medium rounded-lg text-sm px-4 py-2 text-center">Get
                     started</button>
                 <button data-collapse-toggle="navbar-sticky" type="button"
@@ -49,10 +49,6 @@
                         <a href="#"
                             class="block py-2 px-3 text-gray-900 bg-gray-200 rounded hover:bg-gray-300 md:bg-transparent md:hover:text-gray-700 md:p-0"
                             aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('landing-pages') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:hover:text-gray-700 md:p-0">Article</a>
                     </li>
                     <li>
                         <a href="{{ route('gallery') }}"
@@ -83,19 +79,18 @@
                         </div>
 
                         <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-6 relative">
-                            Hi, Welcome to Our Journal
+                            Hi, Welcome to My Gallery
                             <span
                                 class="block mt-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
-                                Front End Dev
+                                Camera enthusiast
                             </span>
                         </h1>
                     </div>
 
                     <p class="text-gray-600 text-lg mb-8 max-w-lg">
-                        On this blog I share tips and tricks, frameworks, projects, tutorials, etc.
-                        Make sure you subscribe to get the latest updates
+                        On this blog I share my own portofolio about photography, Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia facere earum nemo? Magni!
                     </p>
-                    <a href="{{ route('landing-pages') }}"
+                    <a href="#"
                         class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-purple-700 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800">
                         <span class="text-xs bg-purple-600 rounded-full text-white px-4 py-1.5 me-3">New</span> <span
                             class="text-sm font-medium text-white">How to quickly deploy a static website, Watch Now !!</span>
@@ -199,135 +194,103 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Article Card Template -->
-                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-inherit">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                         <div class="relative">
                             <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-                                src="https://via.placeholder.com/300x200" alt="Article Image">
-                            <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
-                                Tech
-                            </div>
+                                src="https://picsum.photos/400/800" alt="Article Image"> 
                         </div>
 
                         <div class="p-6">
                             <h2
                                 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                                Fundamental Of JavaScript
+                                Lorem ipsum dolor sit amet.
                             </h2>
 
                             <div class="flex items-center text-gray-500 text-sm">
-                                <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
+                                <img class="w-8 h-8 rounded-full mr-3" src="https://picsum.photos/100/100"
                                     alt="Author">
                                 <div>
                                     <p class="font-medium text-gray-700">Michael</p>
-                                    <p>Jan 10, 2022 · 3 Min Read</p>
+                                     <p>Life is easy</p>
                                 </div>
-                            </div>
-
-                            <a href="#"
-                                class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-semibold transition-colors">
-                                Read More →
-                            </a>
+                            </div> 
                         </div>
                     </div>
                 </div>
 
                 <!-- Artikel 2 -->
-                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-inherit">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                         <div class="relative">
                             <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-                                src="https://via.placeholder.com/300x200" alt="Article Image">
-                            <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
-                                CSS
-                            </div>
+                                src="https://picsum.photos/400/800" alt="Article Image"> 
                         </div>
 
                         <div class="p-6">
                             <h2
-                                class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                                Grid CSS Make Your Life Easier
+                                class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                Lorem ipsum dolor sit amet.
                             </h2>
 
                             <div class="flex items-center text-gray-500 text-sm">
-                                <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
+                                <img class="w-8 h-8 rounded-full mr-3" src="https://picsum.photos/100/100"
                                     alt="Author">
                                 <div>
                                     <p class="font-medium text-gray-700">Michael</p>
-                                    <p>Jan 10, 2022 · 3 Min Read</p>
+                                     <p>Life is easy</p>
                                 </div>
-                            </div>
-
-                            <a href="#"
-                                class="mt-4 inline-block text-green-600 hover:text-green-800 font-semibold transition-colors">
-                                Read More →
-                            </a>
+                            </div> 
                         </div>
                     </div>
                 </div>
                 <!-- Artikel 3 -->
-                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-inherit">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                         <div class="relative">
                             <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-                                src="https://via.placeholder.com/300x200" alt="Article Image">
-                            <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
-                                CSS
-                            </div>
+                                src="https://picsum.photos/400/800" alt="Article Image"> 
                         </div>
 
                         <div class="p-6">
                             <h2
-                                class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                                Grid CSS Make Your Life Easier
+                                class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                Lorem ipsum dolor sit amet.
                             </h2>
 
                             <div class="flex items-center text-gray-500 text-sm">
-                                <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
+                                <img class="w-8 h-8 rounded-full mr-3" src="https://picsum.photos/100/100"
                                     alt="Author">
                                 <div>
                                     <p class="font-medium text-gray-700">Michael</p>
-                                    <p>Jan 10, 2022 · 3 Min Read</p>
+                                     <p>Life is easy</p>
                                 </div>
-                            </div>
-
-                            <a href="#"
-                                class="mt-4 inline-block text-green-600 hover:text-green-800 font-semibold transition-colors">
-                                Read More →
-                            </a>
+                            </div> 
                         </div>
                     </div>
                 </div>
                 <!-- Artikel 4 -->
-                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <div class="group transform transition-all duration-300 hover:-translate-y-2 hover:shadow-inherit">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                         <div class="relative">
                             <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-                                src="https://via.placeholder.com/300x200" alt="Article Image">
-                            <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
-                                CSS
-                            </div>
+                                src="https://picsum.photos/400/800" alt="Article Image"> 
                         </div>
 
                         <div class="p-6">
                             <h2
-                                class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                                Grid CSS Make Your Life Easier
+                                class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                Lorem ipsum dolor sit amet.
                             </h2>
 
                             <div class="flex items-center text-gray-500 text-sm">
-                                <img class="w-8 h-8 rounded-full mr-3" src="https://via.placeholder.com/50"
+                                <img class="w-8 h-8 rounded-full mr-3" src="https://picsum.photos/100/100"
                                     alt="Author">
                                 <div>
                                     <p class="font-medium text-gray-700">Michael</p>
-                                    <p>Jan 10, 2022 · 3 Min Read</p>
+                                     <p>Life is easy</p>
                                 </div>
-                            </div>
-
-                            <a href="#"
-                                class="mt-4 inline-block text-green-600 hover:text-green-800 font-semibold transition-colors">
-                                Read More →
-                            </a>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -344,9 +307,9 @@
                 <div class="space-y-6">
                     <div class="flex items-center">
                         <h2 class="text-3xl font-bold">
-                            <span class="text-purple-700">Syntax</span>
+                            <span class="text-purple-700">Shutter</span>
                             <span class="text-gray-700">.</span>
-                            <span class="text-blue-300">Journal</span>
+                            <span class="text-blue-300">Stories</span>
                         </h2>
                     </div>
                     <p class="text-gray-500 text-sm leading-relaxed">
@@ -387,7 +350,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('article-prototype')}}"
+                            <a href="#"
                                 class="text-gray-500 hover:text-blue-300 transition-colors duration-300 flex items-center gap-2 group">
                                 <span class="w-0 group-hover:w-2 h-0.5 bg-blue-300 transition-all duration-300"></span>
                                 Blog
@@ -479,7 +442,8 @@
             <div class="mt-12 pt-8 border-t border-gray-300">
                 <div class="text-center space-y-4">
                     <p class="text-sm text-gray-500">
-                        © 2024 <span class="font-semibold text-gray-700">Syntax Journal</span> | All Rights Reserved
+                        © 2024 <span class="font-semibold text-gray-700">Shutter Stories
+                        </span> | All Rights Reserved
                     </p>
                     <p class="text-sm text-gray-500 flex items-center justify-center gap-2">
                         Crafted with <span class="text-red-500 animate-pulse">❤</span> in Jakarta, Indonesia
