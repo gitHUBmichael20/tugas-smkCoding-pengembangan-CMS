@@ -36,6 +36,10 @@ return [
     */
 
     'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
         'pembaca' => [
             'driver' => 'session',
             'provider' => 'pembaca',
@@ -43,9 +47,9 @@ return [
         'penulis' => [
             'driver' => 'session',
             'provider' => 'penulis',
+            'redirectTo' => '/admin-login',
         ],
     ],
-
 
     /*
     |--------------------------------------------------------------------------

@@ -20,7 +20,7 @@ class ArticleSeeder extends Seeder
         for ($i = 0; $i < 100; $i++) {
             DB::table('article')->insert([
                 'image' => 'https://picsum.photos/1280/960?random=' . $i,
-                'author' => $faker->randomElement(['BudiWrites',  'SandiScripts', 'GalihCodes', 'MichaelInks']),
+                'author' => 'michael',
                 'created_date' => $faker->date(),
                 'article_type' => $faker->randomElement(['CSS', 'Javascript', 'HTML', 'PHP', 'Github', 'Python', 'Math']),
                 'title' => $faker->sentence(6),

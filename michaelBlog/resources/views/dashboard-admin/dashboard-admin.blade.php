@@ -128,8 +128,7 @@
 
             <div id="section-2" class="section-content hidden">
                 <div class="bg-white p-6 rounded-lg shadow">
-                    <h2 class="text-2xl font-bold mb-4">Article Management</h2>
-                    <p>Article management content goes here...</p>
+                    @include('dashboard-admin.upload-article')
                 </div>
             </div>
 

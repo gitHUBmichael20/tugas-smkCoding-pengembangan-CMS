@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\GalleryImage;
+use App\Http\Controllers\PembacaController;
 use App\Models\Article;
 use App\Models\Gallery;
 
@@ -42,7 +43,7 @@ Route::get('/gallery', [GalleryImage::class, 'index'])->name('gallery');
 // Ke halaman dashboard admin
 Route::get('/admin', function () {
    return view('dashboard-admin.dashboard-admin');
-})->name('admin')->middleware('auth:penulis');
+})->name('admin');
 
 // Sign-up users
 Route::get('/sign-up', function () {
@@ -58,6 +59,8 @@ Route::get('/login', function () {
 Route::get('/admin-login', function () {
    return view('dashboard-admin.admin-login');
 })->name('admin-login');
+
+Route::post('/admin-login', [PembacaController::class, 'login'])->name('admin.login.post');
 
 // signup untuk admin
 Route::get('/sign-up-admin', function () {
