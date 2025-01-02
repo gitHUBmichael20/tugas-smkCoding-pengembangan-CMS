@@ -2,15 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryImage;
-use App\Http\Controllers\PembacaController;
 use App\Models\Gallery;
-
-// buka halaman gallery
-Route::get('/gallery', [GalleryImage::class, 'index'])->name('gallery');
 
 // Ambil data Gallery
 Route::get('/galleries', function () {
-   $galleries = Gallery::all(); // Ambil semua artikel
+   $galleries = Gallery::all();
    return view('galleries', compact('galleries'));
 });
 
@@ -32,12 +28,13 @@ Route::get('/admin', function () {
    return view('dashboard-admin.dashboard-admin');
 })->name('admin');
 
+Route::get('/admin', [GalleryImage::class, 'managePost']);
+
+
 // Login untuk admin
 Route::get('/login', function () {
    return view('dashboard-admin.admin-login');
 })->name('admin-login');
-
-Route::post('/admin-login', [PembacaController::class, 'login'])->name('admin.login.post');
 
 // signup untuk admin
 Route::get('/sign-up-admin', function () {

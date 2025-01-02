@@ -9,12 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-100">
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+<body class="bg-gray-100"> 
     <div class="flex h-screen">
         <!-- Sidebar -->
         <aside id="sidebar"
@@ -22,20 +17,20 @@
             <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                 <div class="flex items-center mb-5">
                     <img src="./assets/logo.png" alt="Logo" class="h-8 w-8 mr-3" />
-                    <span class="text-xl font-semibold dark:text-white">Syntax Journal</span>
+                    <span class="text-xl font-semibold dark:text-white">Shutter Stories</span>
                 </div>
 
                 <nav class="space-y-2">
                     <button data-section="section-1"
-                        class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
-                        <i class="fa-solid fa-file" style="color: #B197FC;"></i>
-                        <span class="ml-3">JumboTron</span>
+                        class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 dark:text-blue-600 hover:text-gray-900">
+                        <i class="fa-regular fa-square-plus fa-xl" style="color: #74C0FC;"></i>
+                        <span class="ml-3">Posting</span>
                     </button>
 
                     <button data-section="section-2"
                         class="nav-item w-full flex items-center p-2 rounded-lg transition-colors duration-200 text-white hover:bg-gray-100 hover:text-gray-900">
-                        <i class="fa-solid fa-newspaper" style="color: #B197FC;"></i>
-                        <span class="ml-3">Article</span>
+                        <i class="fa-solid fa-pen-nib fa-xl" style="color: #74C0FC;"></i>
+                        <span class="ml-3">Edit</span>
                     </button>
 
                     <button data-section="section-3"
@@ -70,68 +65,14 @@
         <main class="flex-1 p-4 overflow-auto">
             <div id="section-1" class="section-content">
                 {{-- konten jumbotron --}}
-                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
-                    <!-- Admin Panel Header -->
-                    <div class="mb-6">
-                        <h2 class="text-2xl font-bold text-gray-800">Jumbotron Admin Panel</h2>
-                        <p class="text-gray-600">Manage your jumbotron content</p>
-                    </div>
-                    <!-- Admin Form -->
-                    <form class="space-y-6">
-                        <!-- Title Input -->
-                        <div>
-                            <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Title</label>
-                            <input type="text" id="title" name="title"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="Enter title">
-                        </div>
-                        <!-- Category Select -->
-                        <div>
-                            <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Category</label>
-                            <select id="category" name="category"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                <option value="tutorial">Tutorial</option>
-                                <option value="news">News</option>
-                                <option value="update">Update</option>
-                                <option value="announcement">Announcement</option>
-                            </select>
-                        </div>
-                        <!-- Paragraph Input -->
-                        <div>
-                            <label for="paragraph"
-                                class="block text-sm font-medium text-gray-700 mb-2">Paragraph</label>
-                            <textarea id="paragraph" name="paragraph" rows="4"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="Enter content"></textarea>
-                        </div>
-                        <!-- Action Buttons -->
-                        <div class="flex flex-wrap gap-4">
-                            <!-- Create Button -->
-                            <button type="submit"
-                                class="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
-                                Create
-                            </button>
-                            <!-- Update Button -->
-                            <button type="button"
-                                class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                                Update
-                            </button>
-                            <!-- Delete Button -->
-                            <button type="button"
-                                class="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
-                                Delete
-                            </button>
-                        </div>
-                    </form>
+                <div class="bg-white p-6 rounded-lg shadow mt-3"> 
+                    @include('dashboard-admin.post-content')
                 </div>
             </div>
 
             <div id="section-2" class="section-content hidden">
-                <div class="bg-white p-6 rounded-lg shadow">
-                    @include('dashboard-admin.upload-article')
-                </div>
                 <div class="bg-white p-6 rounded-lg shadow mt-3">
-                    @include('dashboard-admin.manage-article')
+                    @include('dashboard-admin.manage-post')
                 </div>
             </div>
 

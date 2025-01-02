@@ -11,10 +11,10 @@
                     <a href="{{ route('about-pages')}}" class="hover:underline me-4 md:me-6">About</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Dashboard Admin</a>
+                    <a href="{{ route('admin') }}" class="hover:underline me-4 md:me-6">Dashboard Admin</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Gallery</a>
+                    <a href="{{ route('gallery')}}" class="hover:underline me-4 md:me-6">Gallery</a>
                 </li>
                 <li>
                     <a href="mailto:carlosimbolon23@gmail.com" class="hover:underline">Contact</a>

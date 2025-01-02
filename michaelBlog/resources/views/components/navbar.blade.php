@@ -23,7 +23,7 @@
             <ul
                 class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white/70 backdrop-blur-sm md:space-x-8 md:flex-row md:mt-0 md:border-0">
                 <li>
-                    <a href="#"
+                    <a href="{{ route('index')}}"
                         class="block py-2 px-3 text-gray-900 bg-gray-200 rounded hover:bg-gray-300 md:bg-transparent md:hover:text-gray-700 md:p-0"
                         aria-current="page">Home</a>
                 </li>

@@ -12,4 +12,10 @@ class GalleryImage extends Controller
         $galleries = Gallery::simplePaginate(12);
         return view('gallery.gallery-pages', compact('galleries'));
     }
+    
+    public function managePost()
+    {
+        $galleries = Gallery::all();
+        return view('dashboard-admin.dashboard-admin', compact('galleries'));
+    }
 }
