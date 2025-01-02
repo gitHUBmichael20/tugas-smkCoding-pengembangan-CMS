@@ -2,13 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GalleryImage;
+use App\Http\Controllers\DashboardAdminController;
 use App\Models\Gallery;
 
-// Ambil data Gallery
-Route::get('/galleries', function () {
-   $galleries = Gallery::all();
-   return view('galleries', compact('galleries'));
-});
 
 // Kembali ke index
 Route::get('/index', function () {
@@ -24,12 +20,7 @@ Route::get('/', function () {
 Route::get('/gallery', [GalleryImage::class, 'index'])->name('gallery');
 
 // Ke halaman dashboard admin
-Route::get('/admin', function () {
-   return view('dashboard-admin.dashboard-admin');
-})->name('admin');
-
-Route::get('/admin', [GalleryImage::class, 'managePost']);
-
+Route::get('/admin-dashboard', [DashboardAdminController::class, 'index'])->name('admin');
 
 // Login untuk admin
 Route::get('/login', function () {

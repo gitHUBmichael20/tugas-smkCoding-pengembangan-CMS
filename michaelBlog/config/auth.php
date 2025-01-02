@@ -36,18 +36,9 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-        'pembaca' => [
-            'driver' => 'session',
-            'provider' => 'pembaca',
-        ],
         'penulis' => [
             'driver' => 'session',
             'provider' => 'penulis',
-            'redirectTo' => '/admin-login',
         ],
     ],
 
@@ -69,15 +60,13 @@ return [
     */
 
     'providers' => [
-        'pembaca' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Pembaca::class,
-        ],
         'penulis' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Penulis::class,
+            'model' => App\Models\User::class,
         ],
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------
