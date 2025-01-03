@@ -22,7 +22,7 @@
                         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-800 md:text-2xl">
                             Create account for Admin Now !!
                         </h1>
-                        <form class="space-y-4 md:space-y-6" action="{{ route('sign-up-admin.store') }}" method="POST">
+                        <form class="space-y-4 md:space-y-6" action="" method="POST">
                             @csrf
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-800">Your
@@ -33,7 +33,7 @@
                             </div>
                             <div>
                                 <label for="username" class="block mb-2 text-sm font-medium text-gray-800">Your
-                                    Name</label>
+                                    username</label>
                                 <input type="username" name="username" id="username"
                                     class="bg-gray-100 border border-gray-300 text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                     placeholder="Agus Budi" required="">

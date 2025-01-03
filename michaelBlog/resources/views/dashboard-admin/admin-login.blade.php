@@ -22,7 +22,7 @@
                         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-800 md:text-2xl">
                             Sign in to your account
                         </h1>
-                        <form class="space-y-4 md:space-y-6" action="{{ route('admin.login.post')}}" method="post">
+                        <form class="space-y-4 md:space-y-6" action="" method="post">
                             @csrf
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-800">Your email</label>
