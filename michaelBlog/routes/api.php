@@ -12,4 +12,6 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/gallery', [DashboardAdminController::class, 'store'])->name('gallery.store');
 
+Route::put('/gallery/{id}', [DashboardAdminController::class, 'update'])->name('gallery.update');
+
 Route::delete('/gallery/{id}', [DashboardAdminController::class, 'destroy'])->name('gallery.destroy');

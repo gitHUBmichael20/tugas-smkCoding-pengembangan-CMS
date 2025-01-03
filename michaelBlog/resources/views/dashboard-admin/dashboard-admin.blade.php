@@ -12,7 +12,20 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-100"> 
+<body class="bg-gray-100">
+
+    @if (session('success'))
+        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4">
+            <p>{{ session('success') }}</p>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4">
+            <p>{{ session('error') }}</p>
+        </div>
+    @endif
+
     <div class="flex h-screen">
         <!-- Sidebar -->
         <aside id="sidebar"
@@ -68,7 +81,7 @@
         <main class="flex-1 p-4 overflow-auto">
             <div id="section-1" class="section-content">
                 {{-- konten jumbotron --}}
-                <div class="bg-white p-6 rounded-lg shadow mt-3"> 
+                <div class="bg-white p-6 rounded-lg shadow mt-3">
                     @include('dashboard-admin.post-content')
                 </div>
             </div>

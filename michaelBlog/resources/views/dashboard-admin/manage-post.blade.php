@@ -20,37 +20,35 @@
         </form>
     </div>
 
-
-
     <!-- Modal (Hidden by Default) -->
     <div id="editModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-white p-6 rounded-lg shadow-lg w-96">
             <h2 class="text-xl font-bold mb-4">Edit Gallery</h2>
-            <form id="editForm" action="" method="POST">
+            <!-- Perhatikan perubahan pada action form -->
+            <form id="editForm" method="POST">
                 @csrf
                 @method('PUT')
+                <!-- Tambahkan input hidden untuk ID -->
+                <input type="hidden" id="editId" name="id">
                 <div class="mb-4">
                     <label for="editTitle" class="block text-sm font-medium text-gray-700">Title</label>
-                    <input type="text" id="editTitle" name="title" class="w-full px-4 py-2 border rounded-lg"
-                        required>
+                    <input type="text" id="editTitle" name="title" class="w-full px-4 py-2 border rounded-lg" required>
                 </div>
                 <div class="mb-4">
                     <label for="editImage" class="block text-sm font-medium text-gray-700">Image</label>
-                    <input type="text" id="editImage" name="image" class="w-full px-4 py-2 border rounded-lg"
-                        required>
+                    <input type="text" id="editImage" name="image" class="w-full px-4 py-2 border rounded-lg" required>
                 </div>
                 <div class="mb-4">
                     <label for="editAuthor" class="block text-sm font-medium text-gray-700">Author</label>
-                    <input type="text" id="editAuthor" name="author" class="w-full px-4 py-2 border rounded-lg"
-                        required>
+                    <input type="text" id="editAuthor" name="author" class="w-full px-4 py-2 border rounded-lg" required>
                 </div>
                 <div class="mb-4">
                     <label for="editCaption" class="block text-sm font-medium text-gray-700">Caption</label>
-                    <textarea id="editCaption" name="caption" class="w-full px-4 py-2 border rounded-lg" required></textarea>
+                    <textarea id="editCaption" name="captions" class="w-full px-4 py-2 border rounded-lg" required></textarea>
                 </div>
                 <div class="flex justify-end">
-                    <button type="button" id="closeModal" class="mr-4 px-4 py-2 bg-gray-300 rounded-lg">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg">Save</button>
+                    <button type="button" id="closeModal" class="mr-4 px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Save</button>
                 </div>
             </form>
         </div>
@@ -65,53 +63,75 @@
                 <th scope="col" class="px-6 py-3">Image</th>
                 <th scope="col" class="px-6 py-3">Author</th>
                 <th scope="col" class="px-6 py-3">Caption</th>
+                <th scope="col" class="px-6 py-3">Delte</th>
                 <th scope="col" class="px-6 py-3">Edit</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($galleries as $gallery)
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="px-6 py-4" data-title="{{ $gallery->id }}">{{ $gallery->id }}</td>
+                    <td class="px-6 py-4" data-id="{{ $gallery->id }}">{{ $gallery->id }}</td>
                     <td class="px-6 py-4" data-title="{{ $gallery->title }}">{{ $gallery->title }}</td>
                     <td class="px-6 py-4" data-image="{{ $gallery->image }}">{{ $gallery->image }}</td>
                     <td class="px-6 py-4" data-author="{{ $gallery->author }}">{{ $gallery->author }}</td>
                     <td class="px-6 py-4" data-caption="{{ $gallery->captions }}">{{ $gallery->captions }}</td>
+                    <td>
+                        <button type="submit"
+                            class="editButton px-4 py-2 bg-yellow-500 text-white rounded-lg">Edit</button>
+                    </td>
                     <td class="px-6 py-4">
-                        <form action="{{ route('gallery.destroy', $gallery->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this item?')">
+                        <form action="{{ route('gallery.destroy', $gallery->id) }}" method="POST"
+                            onsubmit="return confirm('Are you sure you want to delete this item?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="deleteButton px-4 py-2 bg-red-500 text-white rounded-lg">Delete</button>
+                            <button type="submit"
+                                class="deleteButton px-4 py-2 bg-red-500 text-white rounded-lg">Delete</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
-        
     </table>
-
-    
-
 </div>
+
+
 
 <script>
     document.querySelectorAll('.editButton').forEach(button => {
         button.addEventListener('click', function() {
             const row = this.closest('tr');
+            const id = row.querySelector('[data-id]').dataset.id;
             const title = row.querySelector('[data-title]').dataset.title;
             const image = row.querySelector('[data-image]').dataset.image;
             const author = row.querySelector('[data-author]').dataset.author;
             const caption = row.querySelector('[data-caption]').dataset.caption;
 
+            // Set form action dengan route yang benar
+            const form = document.getElementById('editForm');
+            form.action = `{{ route('gallery.update', '') }}/${id}`;
+
+            // Set nilai ID ke input hidden
+            document.getElementById('editId').value = id;
+            // Set nilai lainnya
             document.getElementById('editTitle').value = title;
             document.getElementById('editImage').value = image;
             document.getElementById('editAuthor').value = author;
             document.getElementById('editCaption').value = caption;
 
+            // Tampilkan modal
             document.getElementById('editModal').classList.remove('hidden');
         });
     });
 
+    // Tutup modal dengan tombol cancel
     document.getElementById('closeModal').addEventListener('click', function() {
         document.getElementById('editModal').classList.add('hidden');
+    });
+
+    // Tutup modal ketika klik di luar modal
+    document.getElementById('editModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.add('hidden');
+        }
     });
 </script>
