@@ -19,4 +19,4 @@ Route::delete('/dashboard-admin/{id}', [DashboardAdminController::class, 'destro
 
 Route::post('/sign-up',[AdminAccount::class, 'store'])->name('gallery.store');
 
-Route::post('/login', [AdminAccount::class, 'show'])->name('gallery.store');
+Route::post('/login', [AdminAccount::class, 'show'])->name('gallery.show');
