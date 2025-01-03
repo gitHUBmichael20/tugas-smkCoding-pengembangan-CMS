@@ -1,24 +1,12 @@
 <div class="bg-white border-4 rounded-lg shadow relative m-10">
-
-    @if (session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-    @endif
-
-    @if (session()->has('error'))
-        <div class="alert alert-danger">
-            {{ session()->get('error') }}
-        </div>
-    @endif
-
     <div class="flex items-start justify-between p-5 border-b rounded-t">
         <h3 class="text-xl font-semibold">
             Post a New Image
         </h3>
     </div>
 
-    <form action="/api/gallery" method="POST">
+    <form action="{{ route('gallery.store') }}" method="POST">
+        @csrf
         <div class="p-6 space-y-6">
             <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
@@ -52,5 +40,16 @@
                 class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-5 py-2.5">Post</button>
         </div>
     </form>
-
 </div>
+
+@if (session()->has('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+@endif
+
+@if (session()->has('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+@endif  

@@ -20,6 +20,8 @@
         </form>
     </div>
 
+
+
     <!-- Modal (Hidden by Default) -->
     <div id="editModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
         <div class="bg-white p-6 rounded-lg shadow-lg w-96">
@@ -58,6 +60,7 @@
     <table class="w-full text-sm text-left text-gray-700">
         <thead class="text-xs uppercase bg-gray-100 text-gray-600">
             <tr>
+                <th scope="col" class="px-6 py-3">ID</th>
                 <th scope="col" class="px-6 py-3">Title</th>
                 <th scope="col" class="px-6 py-3">Image</th>
                 <th scope="col" class="px-6 py-3">Author</th>
@@ -68,18 +71,26 @@
         <tbody>
             @foreach ($galleries as $gallery)
                 <tr class="bg-white border-b hover:bg-gray-50">
+                    <td class="px-6 py-4" data-title="{{ $gallery->id }}">{{ $gallery->id }}</td>
                     <td class="px-6 py-4" data-title="{{ $gallery->title }}">{{ $gallery->title }}</td>
                     <td class="px-6 py-4" data-image="{{ $gallery->image }}">{{ $gallery->image }}</td>
                     <td class="px-6 py-4" data-author="{{ $gallery->author }}">{{ $gallery->author }}</td>
                     <td class="px-6 py-4" data-caption="{{ $gallery->captions }}">{{ $gallery->captions }}</td>
                     <td class="px-6 py-4">
-                        <button type="button"
-                            class="editButton px-4 py-2 bg-yellow-400 text-white rounded-lg">Edit</button>
+                        <form action="{{ route('gallery.destroy', $gallery->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this item?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="deleteButton px-4 py-2 bg-red-500 text-white rounded-lg">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
+        
     </table>
+
+    
+
 </div>
 
 <script>
